@@ -4,63 +4,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Bonkey Puzzles</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; background: #f8f9fa; line-height: 1.7; }
-    a { color: #4a6cf7; }
-    .page-header { background: linear-gradient(135deg, #4a6cf7 0%, #6a3de8 100%); color: #fff; padding: 3rem 1.5rem 2.5rem; text-align: center; }
-    .page-header h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 800; }
-    .page-header p { margin-top: .5rem; opacity: .85; }
-    article { max-width: 720px; margin: 3rem auto; padding: 0 1.5rem 4rem; }
-    h2 { font-size: 1.2rem; font-weight: 700; margin: 2rem 0 .5rem; color: #1a1a2e; }
-    p { color: #444; margin-bottom: 1rem; }
-    footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 2rem 1.5rem; font-size: .9rem; }
-    footer a { color: #aaa; }
-    footer a:hover { color: #fff; }
-    footer .sep { margin: 0 .5rem; }
-  </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
+<input type="checkbox" id="nav-toggle" class="nav-toggle" style="display:none">
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="t">Bonkey</span><span class="c">Puzzles</span></a>
+    <label for="nav-toggle" class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></label>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="download.html" class="nav-cta">Get the app</a></li>
+    </ul>
+  </div>
+</nav>
+
 <header class="page-header">
   <h1>Privacy Policy</h1>
-  <p>Bonkey Puzzles — Last updated June 24, 2026</p>
+  <p>Last updated June 24, 2026</p>
 </header>
 
-<article>
-  <p>Bonkey Apps built Bonkey Puzzles as a free-to-play puzzle app. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our app, and the choices you have associated with that data.</p>
+<div class="section-sm">
+  <div class="prose">
+    <p>Bonkey Apps built Bonkey Puzzles as a free-to-play puzzle app. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our app, and the choices you have associated with that data.</p>
 
-  <h2>No Personal Data Collected</h2>
-  <p>We do not collect, store, or transmit any personal information. The app does not require you to create an account, and we do not ask for your name, email address, or any other identifying information.</p>
+    <h2>No Personal Data Collected</h2>
+    <p>We do not collect, store, or transmit any personal information. The app does not require you to create an account, and we do not ask for your name, email address, or any other identifying information.</p>
 
-  <h2>Local-Only Storage</h2>
-  <p>All game progress and settings are stored locally on your device using Android's standard local storage. This data never leaves your device and is not accessible to Bonkey Apps or any third party. If you uninstall the app, this data is deleted automatically by Android.</p>
+    <h2>Local-Only Storage</h2>
+    <p>All game progress and settings are stored locally on your device using standard local storage. This data never leaves your device and is not accessible to Bonkey Apps or any third party. If you uninstall the app, this data is deleted automatically by your operating system.</p>
 
-  <h2>No Network Calls During Gameplay</h2>
-  <p>Bonkey Puzzles is fully offline. The app makes no network requests during gameplay. You do not need an internet connection to play.</p>
+    <h2>No Network Calls During Gameplay</h2>
+    <p>Bonkey Puzzles is fully offline. The app makes no network requests during gameplay. You do not need an internet connection to play.</p>
 
-  <h2>In-App Purchases</h2>
-  <p>Optional puzzle packs can be purchased through Google Play Billing. All purchase transactions are handled entirely by Google. We do not receive or store your payment details. Please refer to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> for information on how Google handles purchase data.</p>
+    <h2>In-App Purchases</h2>
+    <p>Optional puzzle packs can be purchased through Google Play Billing or Apple's in-app purchase system. All purchase transactions are handled entirely by Google or Apple respectively. We do not receive or store your payment details. Please refer to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a> for information on how they handle purchase data.</p>
 
-  <h2>Children's Privacy</h2>
-  <p>We do not knowingly collect personal information from children under the age of 13. Because we collect no personal data at all, there is no special handling required for children.</p>
+    <h2>Children's Privacy</h2>
+    <p>We do not knowingly collect personal information from children under the age of 13. Because we collect no personal data at all, there is no special handling required for children.</p>
 
-  <h2>Third-Party Services</h2>
-  <p>Bonkey Puzzles does not integrate any third-party analytics SDKs, advertising SDKs, or crash-reporting services that transmit data off your device.</p>
+    <h2>Third-Party Services</h2>
+    <p>Bonkey Puzzles does not integrate any third-party analytics SDKs, advertising SDKs, or crash-reporting services that transmit data off your device.</p>
 
-  <h2>Changes to This Policy</h2>
-  <p>We may update this privacy policy from time to time. Any changes will be posted on this page with an updated "Last updated" date. We encourage you to review this page periodically.</p>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. Any changes will be posted on this page with an updated "Last updated" date. We encourage you to review this page periodically.</p>
 
-  <h2>Contact Us</h2>
-  <p>If you have any questions about this privacy policy, please contact us at <a href="mailto:bonkey.apps@gmail.com">bonkey.apps@gmail.com</a>.</p>
-</article>
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this privacy policy, please contact us at <a href="mailto:bonkey.apps@gmail.com">bonkey.apps@gmail.com</a>.</p>
+  </div>
+</div>
 
-<footer>
-  <p>© Bonkey Apps
-    <span class="sep">·</span><a href="privacy.html">Privacy Policy</a>
-    <span class="sep">·</span><a href="support.html">Support</a>
-    <span class="sep">·</span><a href="report.html">Report a Bug</a>
-  </p>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><span class="t">Bonkey</span><span class="c">Puzzles</span></div>
+      <p>A family-friendly puzzle collection by Bonkey Apps. Built with the Godot Engine.</p>
+    </div>
+    <div class="footer-col">
+      <h4>App</h4>
+      <ul>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="support.html">Support &amp; FAQ</a></li>
+        <li><a href="report.html">Report a Bug</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="press.html">Press Kit</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="licenses.html">Licenses</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Bonkey Apps. All rights reserved.</span>
+    <span><a href="mailto:bonkey.apps@gmail.com">bonkey.apps@gmail.com</a></span>
+  </div>
 </footer>
 
 </body>

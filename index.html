@@ -3,109 +3,389 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bonkey Puzzles</title>
+  <title>Bonkey Puzzles — Five classic puzzles, one hyperactive rabbit</title>
+  <meta name="description" content="Bonkey Puzzles is a family-friendly collection of Crossword, Sudoku, Word Search, Word Ladder, and Code Words puzzles — featuring Bonkey the hyperactive space-summer rabbit.">
+  <link rel="stylesheet" href="site.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; background: #f8f9fa; line-height: 1.6; }
-    a { color: #4a6cf7; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(150deg, #1BC3B9 0%, #16B8AE 40%, #3FB6E8 100%);
+      color: #fff; overflow: hidden; position: relative;
+    }
+    .hero-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 5rem 1.5rem 4rem;
+      display: flex; align-items: center;
+      gap: 3rem; flex-wrap: wrap;
+    }
+    .hero-copy { flex: 1; min-width: 280px; }
+    .hero-copy h1 {
+      font-family: 'Baloo 2', cursive; font-weight: 800;
+      font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.05;
+      text-shadow: 0 3px 12px rgba(0,0,0,.15);
+    }
+    .hero-copy h1 .c { color: #FFCB45; }
+    .hero-copy .tagline {
+      font-size: 1.1rem; margin: 1rem 0 2rem;
+      opacity: .92; font-weight: 600; max-width: 460px;
+    }
+    .hero-badges { display: flex; gap: .85rem; flex-wrap: wrap; }
+    .hero-mascot {
+      width: 280px; flex: none;
+      display: flex; align-items: flex-end; justify-content: center;
+    }
+    .hero-mascot img {
+      width: 260px; height: 260px; object-fit: cover; object-position: center 20%;
+      border-radius: 28px; box-shadow: 0 16px 44px rgba(0,0,0,.2);
+    }
+    .hero-stars {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none; overflow: hidden;
+    }
+    .star { position: absolute; border-radius: 50%; background: #fff; opacity: .7; }
 
-    /* Hero */
-    .hero { background: linear-gradient(135deg, #4a6cf7 0%, #6a3de8 100%); color: #fff; text-align: center; padding: 4rem 1.5rem 3rem; }
-    .hero h1 { font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 800; letter-spacing: -1px; }
-    .hero p { font-size: 1.2rem; margin: 1rem auto 2rem; max-width: 520px; opacity: .9; }
-    .badge-placeholder { display: inline-block; background: rgba(255,255,255,.15); border: 2px solid rgba(255,255,255,.4); border-radius: 12px; padding: .75rem 2rem; font-size: .95rem; color: #fff; cursor: default; }
+    /* ── PHONE SHOWCASE ── */
+    .phones-section { background: var(--ink); padding: 5rem 1.5rem; text-align: center; }
+    .phones-section .section-title { color: #fff; }
+    .phones-section .section-sub { color: rgba(255,255,255,.55); }
+    .phone-row {
+      display: flex; justify-content: center; align-items: flex-end;
+      gap: 2rem; flex-wrap: wrap; margin-top: 3rem;
+    }
+    .phone-wrap.tilted-l { transform: rotate(-5deg) translateY(10px); }
+    .phone-wrap.tilted-r { transform: rotate(5deg) translateY(10px); }
 
-    /* Sections */
-    section { padding: 3rem 1.5rem; max-width: 900px; margin: 0 auto; }
-    h2 { font-size: 1.7rem; font-weight: 700; margin-bottom: 1.5rem; color: #1a1a2e; }
+    /* ── GAMES GRID ── */
+    .game-card-icon {
+      width: 48px; height: 48px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;
+    }
+    .game-card h3 { font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 1.1rem; margin-bottom: .35rem; }
+    .game-card p { font-size: .9rem; color: #666; margin: 0; }
 
-    /* Games grid */
-    .games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; }
-    .game-card { background: #fff; border-radius: 16px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
-    .game-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .4rem; color: #4a6cf7; }
-    .game-card p { font-size: .95rem; color: #555; }
+    /* ── FEATURES ── */
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(230px,1fr)); gap: 1.5rem;
+    }
+    .feature { display: flex; gap: 1rem; align-items: flex-start; }
+    .feature-icon {
+      width: 44px; height: 44px; border-radius: 13px; flex: none;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .feature h4 { font-weight: 800; font-size: .95rem; margin-bottom: .25rem; }
+    .feature p { font-size: .875rem; color: var(--muted); margin: 0; }
 
-    /* Pricing */
-    .pricing-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; }
-    .price-card { background: #fff; border-radius: 16px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,.08); text-align: center; }
-    .price-card .price { font-size: 2rem; font-weight: 800; color: #4a6cf7; margin: .5rem 0; }
-    .price-card h3 { font-size: 1rem; font-weight: 700; color: #1a1a2e; }
-    .price-card p { font-size: .9rem; color: #666; margin-top: .4rem; }
-    .badge-coming-soon { display: inline-block; font-size: .75rem; background: #eee; border-radius: 99px; padding: .2rem .75rem; color: #888; margin-top: .5rem; }
+    /* ── PRICING ── */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 1.25rem; }
+    .price-card { background: #fff; border-radius: 18px; padding: 1.75rem; box-shadow: var(--card-shadow); text-align: center; }
+    .price-card.featured { border: 2.5px solid var(--teal); }
+    .price-card h3 { font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 1.1rem; color: var(--ink); }
+    .price-tag { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 2.4rem; color: var(--teal); margin: .4rem 0; }
+    .price-card p { font-size: .9rem; color: #666; }
 
-    /* Footer */
-    footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 2rem 1.5rem; font-size: .9rem; }
-    footer a { color: #aaa; }
-    footer a:hover { color: #fff; }
-    footer .sep { margin: 0 .5rem; }
+    /* ── SCROLL BAND ── */
+    .scroll-band {
+      background: var(--coral); color: #fff;
+      padding: .7rem 1.5rem; text-align: center;
+      font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 1.1rem;
+    }
   </style>
 </head>
 <body>
 
+<input type="checkbox" id="nav-toggle" class="nav-toggle" style="display:none">
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="t">Bonkey</span><span class="c">Puzzles</span></a>
+    <label for="nav-toggle" class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </label>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="download.html" class="nav-cta">Get the app</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
 <header class="hero">
-  <h1>Bonkey Puzzles</h1>
-  <p>Classic puzzles, calm focus. Play anywhere — no internet required.</p>
-  <a class="badge-placeholder" href="#">Coming soon on Google Play</a>
+  <div class="hero-stars">
+    <div class="star" style="width:5px;height:5px;top:12%;left:8%;"></div>
+    <div class="star" style="width:4px;height:4px;top:28%;left:18%;opacity:.5;"></div>
+    <div class="star" style="width:6px;height:6px;top:18%;right:22%;background:#FFCB45;opacity:.9;"></div>
+    <div class="star" style="width:4px;height:4px;top:60%;right:8%;"></div>
+    <div class="star" style="width:5px;height:5px;top:42%;left:52%;opacity:.4;"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1>Five classic puzzles.<br><span class="c">One hyperactive rabbit.</span></h1>
+      <p class="tagline">Crossword, Sudoku, Word Search, Word Ladder &amp; Code Words — all wrapped in a playful space-summer adventure starring Bonkey.</p>
+      <div class="hero-badges">
+        <a href="download.html" class="store-badge">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3.18 23.4a2.08 2.08 0 0 1-.68-.52A2.1 2.1 0 0 1 2 21.3V2.7C2 2.1 2.18 1.6 2.5 1.2L13.06 12 2.5 22.8c-.12-.1-.22-.22-.32-.38v.98z" fill="#EA4335"/><path d="M16.96 15.5 13.06 12l3.9-3.5 4.42 2.5c1.26.72 1.26 1.88 0 2.6l-4.42 2.5v-.1z" fill="#FBBC04"/><path d="M2.5 22.8 13.06 12 16.96 15.5 4.1 23.18A2.4 2.4 0 0 1 2.5 22.8z" fill="#34A853"/><path d="M2.5 1.2C3.08.8 3.76.8 4.1.82l12.86 7.68L13.06 12 2.5 1.2z" fill="#4285F4"/></svg>
+          <div class="store-badge-text">
+            <span class="store-badge-sub">Get it on</span>
+            <span class="store-badge-name">Google Play</span>
+          </div>
+        </a>
+        <a href="download.html" class="store-badge">
+          <svg width="22" height="24" viewBox="0 0 814 1000" fill="white"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-37.5-155.5-127.4C46 702 0 624.9 0 550.2 0 407.5 100.5 307 184.4 307c48.9 0 89.8 33.1 121.8 33.1 30.6 0 76.6-35 135.3-35 53.6 0 150.6 3.2 212.8 86.2zm-198-110.4c28.3-35.7 47.5-85.2 47.5-134.7 0-6.8-.6-13.7-1.9-19.2-44.6 1.7-97.3 29.3-129.5 67.4-25.7 29.9-48.3 79.4-48.3 129.6 0 7.5 1.3 15 1.9 17.6 3.2.6 8.4 1.3 13.6 1.3 39.9 0 90.2-26.4 116.7-61z"/></svg>
+          <div class="store-badge-text">
+            <span class="store-badge-sub">Download on the</span>
+            <span class="store-badge-name">App Store</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="hero-mascot">
+      <img src="images/bonkey-hero.png" alt="Bonkey the hyperactive space-summer rabbit">
+    </div>
+  </div>
 </header>
 
-<section>
-  <h2>Games</h2>
-  <div class="games-grid">
-    <div class="game-card">
-      <h3>Sudoku</h3>
-      <p>Fill the 9×9 grid so every row, column, and box contains the digits 1–9.</p>
+<div class="scroll-band">No internet required &nbsp;·&nbsp; No subscriptions &nbsp;·&nbsp; No ads &nbsp;·&nbsp; Family friendly</div>
+
+<!-- PHONE SHOWCASE -->
+<section class="phones-section">
+  <p class="section-title">Beautifully designed, fun to play</p>
+  <p class="section-sub" style="color:rgba(255,255,255,.5);">Two visual themes — Sunshine &amp; Cosmic Night — to match your vibe.</p>
+  <div class="phone-row">
+
+    <!-- Phone 1 — Home (Sunshine) -->
+    <div class="phone-wrap tilted-l">
+      <div class="phone-screen" style="background:#FFF6EC;">
+        <div class="phone-status" style="color:#243042;"><span>9:41</span><div class="phone-bar" style="border-color:#243042;"></div></div>
+        <div style="background:linear-gradient(160deg,#1BC3B9,#0E9D95);padding:10px 11px 12px;border-radius:0 0 20px 20px;">
+          <div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:13px;color:#fff;">Bonkey<span style="color:#FFCB45;">Puzzles</span></div>
+          <div style="margin-top:8px;display:flex;align-items:flex-end;justify-content:space-between;">
+            <div><div style="font-family:'Baloo 2',cursive;font-weight:700;font-size:15px;color:#fff;line-height:1.1;">Hi, Explorer!</div><div style="font-size:8.5px;color:rgba(255,255,255,.9);font-weight:600;">Ready for today's puzzle?</div></div>
+            <img src="images/bonkey-sprite.png" style="width:50px;height:50px;object-fit:none;object-position:-52px -52px;border-radius:10px;" alt="">
+          </div>
+        </div>
+        <div style="padding:10px 11px 0;font-family:'Baloo 2',cursive;font-weight:700;font-size:11px;margin-bottom:7px;">Puzzle packs</div>
+        <div style="padding:0 11px;display:grid;grid-template-columns:1fr 1fr;gap:7px;">
+          <div style="background:#FF6F61;border-radius:11px;padding:8px;color:#fff;"><div style="font-weight:800;font-size:10px;">Crossword</div><div style="font-size:8px;opacity:.85;">140 puzzles</div></div>
+          <div style="background:#16B8AE;border-radius:11px;padding:8px;color:#fff;"><div style="font-weight:800;font-size:10px;">Sudoku</div><div style="font-size:8px;opacity:.85;">90 puzzles</div></div>
+          <div style="background:#FFB13C;border-radius:11px;padding:8px;color:#fff;"><div style="font-weight:800;font-size:10px;">Word Search</div><div style="font-size:8px;opacity:.85;">120 puzzles</div></div>
+          <div style="background:#9B7BE8;border-radius:11px;padding:8px;color:#fff;"><div style="font-weight:800;font-size:10px;">Word Ladder</div><div style="font-size:8px;opacity:.85;">60 puzzles</div></div>
+        </div>
+      </div>
     </div>
-    <div class="game-card">
-      <h3>Word Search</h3>
-      <p>Hunt for hidden words in a grid of letters — find them all to complete the puzzle.</p>
+
+    <!-- Phone 2 — Word Search (centre, bigger) -->
+    <div class="phone-wrap" style="width:210px;height:436px;">
+      <div class="phone-screen" style="background:#FFF6EC;">
+        <div style="background:linear-gradient(120deg,#FFC766,#FFB13C);padding:8px 11px 10px;">
+          <div class="phone-status" style="color:#6b4a00;padding:0;margin-bottom:6px;"><span>9:41</span><div class="phone-bar" style="border-color:#6b4a00;"></div></div>
+          <div style="text-align:center;color:#6b4a00;font-family:'Baloo 2',cursive;font-weight:800;font-size:13px;">Word Search</div>
+          <div style="text-align:center;font-size:8.5px;font-weight:700;color:#6b4a00;">Theme: Outer Space</div>
+        </div>
+        <div style="padding:9px 10px;">
+          <div style="background:#fff;border-radius:10px;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.07);">
+            <div style="display:grid;grid-template-columns:repeat(9,1fr);gap:2px;font-family:'Baloo 2',cursive;font-weight:700;font-size:9px;color:#46546b;text-align:center;">
+              <span style="background:#FF6F61;color:#fff;border-radius:3px;">R</span><span>O</span><span>C</span><span>K</span><span>E</span><span>T</span><span>S</span><span>A</span><span>G</span>
+              <span>G</span><span>A</span><span>L</span><span>A</span><span>X</span><span>Y</span><span>N</span><span>M</span><span>O</span>
+              <span style="background:rgba(22,184,174,.2);">P</span><span style="background:rgba(22,184,174,.2);">L</span><span style="background:rgba(22,184,174,.2);">A</span><span style="background:rgba(22,184,174,.2);">N</span><span style="background:rgba(22,184,174,.2);">E</span><span>T</span><span>U</span><span>Z</span><span>R</span>
+              <span>C</span><span>O</span><span>M</span><span>E</span><span>T</span><span>K</span><span>W</span><span>B</span><span>I</span>
+              <span>S</span><span>T</span><span style="background:#FF6F61;color:#fff;border-radius:3px;">A</span><span>R</span><span>L</span><span>I</span><span>G</span><span>H</span><span>T</span>
+              <span>O</span><span>R</span><span>B</span><span>I</span><span>T</span><span>D</span><span>F</span><span>J</span><span>Q</span>
+              <span>M</span><span>E</span><span>T</span><span>E</span><span>O</span><span>R</span><span>V</span><span>X</span><span>N</span>
+              <span>S</span><span>U</span><span>N</span><span>B</span><span>C</span><span>E</span><span>L</span><span>Y</span><span>K</span>
+              <span>M</span><span>O</span><span>O</span><span>N</span><span>P</span><span>D</span><span>G</span><span>H</span><span>W</span>
+            </div>
+          </div>
+          <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:4px;">
+            <span style="background:#FF6F61;color:#fff;font-weight:800;font-size:8px;padding:2px 6px;border-radius:8px;text-decoration:line-through;">STAR</span>
+            <span style="border:1.5px solid #16B8AE;color:#16B8AE;font-weight:800;font-size:8px;padding:2px 6px;border-radius:8px;">COMET</span>
+            <span style="background:#f5ece0;color:#46546b;font-weight:800;font-size:8px;padding:2px 6px;border-radius:8px;">ROCKET</span>
+            <span style="background:#f5ece0;color:#46546b;font-weight:800;font-size:8px;padding:2px 6px;border-radius:8px;">PLANET</span>
+            <span style="background:#f5ece0;color:#46546b;font-weight:800;font-size:8px;padding:2px 6px;border-radius:8px;">GALAXY</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="game-card">
-      <h3>Word Ladder</h3>
-      <p>Climb from one word to another by changing one letter at a time.</p>
+
+    <!-- Phone 3 — Cosmic Night home -->
+    <div class="phone-wrap tilted-r">
+      <div class="phone-screen" style="background:linear-gradient(175deg,#1C2A4A,#0d1430);">
+        <div class="phone-status" style="color:#fff;"><span>9:41</span><div class="phone-bar"></div></div>
+        <div style="padding:4px 11px 10px;">
+          <div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:13px;color:#fff;">Bonkey<span style="color:#3FE0D6;">Puzzles</span></div>
+          <div style="margin-top:8px;display:flex;align-items:flex-end;justify-content:space-between;">
+            <div><div style="font-family:'Baloo 2',cursive;font-weight:700;font-size:15px;color:#fff;line-height:1.1;">Hi, Explorer!</div><div style="font-size:8.5px;color:rgba(255,255,255,.7);font-weight:600;">The galaxy needs solving.</div></div>
+            <img src="images/bonkey-sprite.png" style="width:50px;height:50px;object-fit:none;object-position:-52px -52px;border-radius:10px;filter:brightness(0.9);" alt="">
+          </div>
+        </div>
+        <div style="padding:0 11px;font-family:'Baloo 2',cursive;font-weight:700;font-size:11px;color:#fff;margin-bottom:7px;">Puzzle packs</div>
+        <div style="padding:0 11px;display:grid;grid-template-columns:1fr 1fr;gap:7px;">
+          <div style="background:linear-gradient(140deg,#FF8A7E,#FF6F61);border-radius:11px;padding:8px;color:#fff;"><div style="font-weight:800;font-size:10px;">Crossword</div><div style="font-size:8px;opacity:.85;">140 puzzles</div></div>
+          <div style="background:linear-gradient(140deg,#22D3C8,#0E9D95);border-radius:11px;padding:8px;color:#fff;"><div style="font-weight:800;font-size:10px;">Sudoku</div><div style="font-size:8px;opacity:.85;">90 puzzles</div></div>
+          <div style="background:linear-gradient(140deg,#FFC766,#FFB13C);border-radius:11px;padding:8px;color:#fff;"><div style="font-weight:800;font-size:10px;">Word Search</div><div style="font-size:8px;opacity:.85;">120 puzzles</div></div>
+          <div style="background:linear-gradient(140deg,#B49BF2,#9B7BE8);border-radius:11px;padding:8px;color:#fff;"><div style="font-weight:800;font-size:10px;">Word Ladder</div><div style="font-size:8px;opacity:.85;">60 puzzles</div></div>
+        </div>
+      </div>
     </div>
-    <div class="game-card">
+
+  </div>
+</section>
+
+<!-- GAMES -->
+<section class="section">
+  <h2 class="section-title">Five puzzle types, endless fun</h2>
+  <p class="section-sub">Every game includes free puzzles. No purchase ever required to play.</p>
+  <div class="grid-5">
+    <div class="card game-card">
+      <div class="game-card-icon" style="background:#FF6F61;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      </div>
       <h3>Crossword</h3>
-      <p>Solve clues across and down to fill in the classic crossword grid.</p>
+      <p>Solve clues across and down to fill the classic grid.</p>
     </div>
-    <div class="game-card">
-      <h3>Codeword</h3>
-      <p>Every letter has been replaced by a number — crack the code to reveal the words.</p>
+    <div class="card game-card">
+      <div class="game-card-icon" style="background:#16B8AE;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+      </div>
+      <h3>Sudoku</h3>
+      <p>Fill the 9×9 grid so every row, column, and box has 1–9.</p>
+    </div>
+    <div class="card game-card">
+      <div class="game-card-icon" style="background:#FFB13C;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><circle cx="10" cy="10" r="6"/><line x1="14.5" y1="14.5" x2="20" y2="20"/></svg>
+      </div>
+      <h3>Word Search</h3>
+      <p>Hunt for hidden words in a grid — space-themed and beyond.</p>
+    </div>
+    <div class="card game-card">
+      <div class="game-card-icon" style="background:#9B7BE8;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><line x1="7" y1="3" x2="7" y2="21"/><line x1="17" y1="3" x2="17" y2="21"/><line x1="7" y1="7" x2="17" y2="7"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="7" y1="17" x2="17" y2="17"/></svg>
+      </div>
+      <h3>Word Ladder</h3>
+      <p>Climb from one word to another, one letter change at a time.</p>
+    </div>
+    <div class="card game-card">
+      <div class="game-card-icon" style="background:#3FB6E8;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><line x1="9" y1="3" x2="7" y2="21"/><line x1="17" y1="3" x2="15" y2="21"/><line x1="4" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="20" y2="15"/></svg>
+      </div>
+      <h3>Code Words</h3>
+      <p>Every letter is a number — crack the code to reveal the words.</p>
     </div>
   </div>
 </section>
 
-<section style="background:#fff; border-radius:20px; box-shadow:0 2px 16px rgba(0,0,0,.07); max-width:900px; margin:0 auto 2rem;">
-  <div style="padding:3rem 1.5rem;">
-    <h2>How to buy</h2>
-    <div class="pricing-cards">
-      <div class="price-card">
-        <h3>Free Pack</h3>
-        <div class="price">Free</div>
-        <p>10 puzzles per difficulty, per game. No purchase ever needed to play.</p>
+<!-- FEATURES -->
+<section class="section" style="padding-top:0;">
+  <div style="background:var(--ink);border-radius:24px;padding:3rem 2rem;">
+    <h2 class="section-title" style="color:#fff;margin-bottom:.5rem;">Built for families</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,.5);margin-bottom:2.5rem;">Great for kids and adults alike. No fuss, just puzzles.</p>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon" style="background:rgba(22,184,174,.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16B8AE" stroke-width="2.2" stroke-linecap="round"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+        </div>
+        <div><h4 style="color:#fff;">Fully offline</h4><p>Play anywhere — no Wi-Fi ever needed.</p></div>
       </div>
-      <div class="price-card">
-        <h3>Single Game Pack</h3>
-        <div class="price">$5.00</div>
-        <p>50 more puzzles per difficulty for one game. One-time purchase, yours forever.</p>
+      <div class="feature">
+        <div class="feature-icon" style="background:rgba(255,111,97,.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6F61" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="4.5" width="18" height="16.5" rx="2.5"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2.5" x2="8" y2="6"/><line x1="16" y1="2.5" x2="16" y2="6"/></svg>
+        </div>
+        <div><h4 style="color:#fff;">Daily challenges</h4><p>New puzzle every day. Build your streak!</p></div>
       </div>
-      <div class="price-card">
-        <h3>Bundle Pack</h3>
-        <div class="price">$7.50</div>
-        <p>100 more puzzles per difficulty for one game. Best value.</p>
-        <span class="badge-coming-soon">Coming soon</span>
+      <div class="feature">
+        <div class="feature-icon" style="background:rgba(255,177,60,.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFB13C" stroke-width="2.2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div><h4 style="color:#fff;">Three difficulty levels</h4><p>Easy, Medium, Hard — for every skill level.</p></div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon" style="background:rgba(155,123,232,.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9B7BE8" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+        </div>
+        <div><h4 style="color:#fff;">Two themes</h4><p>Sunshine (light) or Cosmic Night (dark) — switch any time in Settings.</p></div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon" style="background:rgba(63,182,232,.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3FB6E8" stroke-width="2.2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div><h4 style="color:#fff;">No ads, no tracking</h4><p>Zero ads. Zero analytics. Nothing leaves your device.</p></div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon" style="background:rgba(255,203,69,.2);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFCB45" stroke-width="2.2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div><h4 style="color:#fff;">One-time purchases</h4><p>No subscriptions. Buy a pack, own it forever.</p></div>
       </div>
     </div>
-    <p style="margin-top:1.5rem; color:#666; font-size:.9rem;">All purchases are one-time. No subscriptions. No ads. Puzzles are generated fresh every time so you never run out.</p>
   </div>
 </section>
 
-<footer>
-  <p>© Bonkey Apps
-    <span class="sep">·</span><a href="privacy.html">Privacy Policy</a>
-    <span class="sep">·</span><a href="support.html">Support</a>
-    <span class="sep">·</span><a href="report.html">Report a Bug</a>
-  </p>
+<!-- PRICING -->
+<section class="section" style="padding-top:0;">
+  <h2 class="section-title">Simple, fair pricing</h2>
+  <p class="section-sub">Start free. Upgrade only if you want more.</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <h3>Free Pack</h3>
+      <div class="price-tag">Free</div>
+      <p>10 puzzles per difficulty, per game. No purchase ever needed to play.</p>
+    </div>
+    <div class="price-card featured">
+      <span class="badge badge-teal" style="margin-bottom:.5rem;">Most popular</span>
+      <h3>Single Game Pack</h3>
+      <div class="price-tag">$5.00</div>
+      <p>50 more puzzles per difficulty for one game of your choice. One-time, yours forever.</p>
+    </div>
+    <div class="price-card">
+      <h3>Bundle Pack</h3>
+      <div class="price-tag">$7.50</div>
+      <p>100 more puzzles per difficulty for one game. Best value.</p>
+      <span class="badge badge-muted" style="margin-top:.5rem;">Coming soon</span>
+    </div>
+  </div>
+  <p style="margin-top:1.5rem;font-size:.875rem;color:var(--muted);text-align:center;">All purchases are one-time. No subscriptions. Puzzles are generated fresh so you never run out.</p>
+</section>
+
+<!-- CTA -->
+<section style="background:linear-gradient(135deg,var(--coral),#FF9A4A);padding:4rem 1.5rem;text-align:center;color:#fff;">
+  <h2 style="font-family:'Baloo 2',cursive;font-weight:800;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:.75rem;">Ready to puzzle with Bonkey?</h2>
+  <p style="font-size:1.05rem;opacity:.92;font-weight:600;margin-bottom:2rem;">Download free on Google Play and the App Store.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="download.html" class="btn btn-dark btn-lg">Google Play</a>
+    <a href="download.html" class="btn btn-lg" style="background:#fff;color:var(--coral);">App Store</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><span class="t">Bonkey</span><span class="c">Puzzles</span></div>
+      <p>A family-friendly puzzle collection by Bonkey Apps. Built with the Godot Engine.</p>
+    </div>
+    <div class="footer-col">
+      <h4>App</h4>
+      <ul>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="support.html">Support &amp; FAQ</a></li>
+        <li><a href="report.html">Report a Bug</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="press.html">Press Kit</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="licenses.html">Licenses</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Bonkey Apps. All rights reserved.</span>
+    <span><a href="mailto:bonkey.apps@gmail.com">bonkey.apps@gmail.com</a></span>
+  </div>
 </footer>
 
 </body>
