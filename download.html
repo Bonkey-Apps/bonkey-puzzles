@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download — Bonkey Puzzles</title>
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .platform-card {
+      background: #fff; border-radius: 22px;
+      padding: 2.5rem 2rem; box-shadow: var(--card-shadow);
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; gap: .75rem;
+    }
+    .platform-icon {
+      width: 72px; height: 72px; border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: .5rem;
+    }
+    .platform-card h3 {
+      font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.3rem;
+    }
+    .platform-card .req {
+      font-size: .8rem; color: var(--muted); font-weight: 700;
+    }
+    .qr-placeholder {
+      width: 100px; height: 100px; border-radius: 10px;
+      background: var(--cream-dark); border: 2px dashed var(--muted);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .7rem; font-weight: 700; color: var(--muted);
+      text-align: center; line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+<input type="checkbox" id="nav-toggle" class="nav-toggle" style="display:none">
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="t">Bonkey</span><span class="c">Puzzles</span></a>
+    <label for="nav-toggle" class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></label>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="download.html" class="active">Download</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="download.html" class="nav-cta">Get the app</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header" style="background:linear-gradient(140deg,var(--teal),var(--violet));">
+  <h1>Get Bonkey Puzzles</h1>
+  <p>Free to download on Android and iOS</p>
+</header>
+
+<section class="section">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem;max-width:760px;margin:0 auto;">
+
+    <!-- Google Play -->
+    <div class="platform-card">
+      <div class="platform-icon" style="background:#E8F5E9;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M3.18 23.4a2.08 2.08 0 0 1-.68-.52A2.1 2.1 0 0 1 2 21.3V2.7C2 2.1 2.18 1.6 2.5 1.2L13.06 12 2.5 22.8c-.12-.1-.22-.22-.32-.38v.98z" fill="#EA4335"/><path d="M16.96 15.5 13.06 12l3.9-3.5 4.42 2.5c1.26.72 1.26 1.88 0 2.6l-4.42 2.5v-.1z" fill="#FBBC04"/><path d="M2.5 22.8 13.06 12 16.96 15.5 4.1 23.18A2.4 2.4 0 0 1 2.5 22.8z" fill="#34A853"/><path d="M2.5 1.2C3.08.8 3.76.8 4.1.82l12.86 7.68L13.06 12 2.5 1.2z" fill="#4285F4"/></svg>
+      </div>
+      <h3>Google Play</h3>
+      <p style="font-size:.9rem;color:#666;margin-bottom:.5rem;">Android smartphones and tablets. Free to download.</p>
+      <p class="req">Requires Android 8.0 (Oreo) or later</p>
+      <a href="#" class="store-badge" style="margin-top:.75rem;opacity:.6;cursor:not-allowed;" title="Coming soon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3.18 23.4a2.08 2.08 0 0 1-.68-.52A2.1 2.1 0 0 1 2 21.3V2.7C2 2.1 2.18 1.6 2.5 1.2L13.06 12 2.5 22.8c-.12-.1-.22-.22-.32-.38v.98z" fill="#EA4335"/><path d="M16.96 15.5 13.06 12l3.9-3.5 4.42 2.5c1.26.72 1.26 1.88 0 2.6l-4.42 2.5v-.1z" fill="#FBBC04"/><path d="M2.5 22.8 13.06 12 16.96 15.5 4.1 23.18A2.4 2.4 0 0 1 2.5 22.8z" fill="#34A853"/><path d="M2.5 1.2C3.08.8 3.76.8 4.1.82l12.86 7.68L13.06 12 2.5 1.2z" fill="#4285F4"/></svg>
+        <div class="store-badge-text">
+          <span class="store-badge-sub">Get it on</span>
+          <span class="store-badge-name">Google Play</span>
+        </div>
+      </a>
+      <span class="badge badge-muted">Coming soon</span>
+      <div class="qr-placeholder">QR code<br>coming soon</div>
+    </div>
+
+    <!-- App Store -->
+    <div class="platform-card">
+      <div class="platform-icon" style="background:#E3F2FD;">
+        <svg width="38" height="42" viewBox="0 0 814 1000" fill="#1C7CF9"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-37.5-155.5-127.4C46 702 0 624.9 0 550.2 0 407.5 100.5 307 184.4 307c48.9 0 89.8 33.1 121.8 33.1 30.6 0 76.6-35 135.3-35 53.6 0 150.6 3.2 212.8 86.2zm-198-110.4c28.3-35.7 47.5-85.2 47.5-134.7 0-6.8-.6-13.7-1.9-19.2-44.6 1.7-97.3 29.3-129.5 67.4-25.7 29.9-48.3 79.4-48.3 129.6 0 7.5 1.3 15 1.9 17.6 3.2.6 8.4 1.3 13.6 1.3 39.9 0 90.2-26.4 116.7-61z"/></svg>
+      </div>
+      <h3>App Store</h3>
+      <p style="font-size:.9rem;color:#666;margin-bottom:.5rem;">iPhone and iPad. Free to download.</p>
+      <p class="req">Requires iOS 15 or iPadOS 15 or later</p>
+      <a href="#" class="store-badge" style="margin-top:.75rem;opacity:.6;cursor:not-allowed;" title="Coming soon">
+        <svg width="20" height="22" viewBox="0 0 814 1000" fill="white"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-37.5-155.5-127.4C46 702 0 624.9 0 550.2 0 407.5 100.5 307 184.4 307c48.9 0 89.8 33.1 121.8 33.1 30.6 0 76.6-35 135.3-35 53.6 0 150.6 3.2 212.8 86.2zm-198-110.4c28.3-35.7 47.5-85.2 47.5-134.7 0-6.8-.6-13.7-1.9-19.2-44.6 1.7-97.3 29.3-129.5 67.4-25.7 29.9-48.3 79.4-48.3 129.6 0 7.5 1.3 15 1.9 17.6 3.2.6 8.4 1.3 13.6 1.3 39.9 0 90.2-26.4 116.7-61z"/></svg>
+        <div class="store-badge-text">
+          <span class="store-badge-sub">Download on the</span>
+          <span class="store-badge-name">App Store</span>
+        </div>
+      </a>
+      <span class="badge badge-muted">Coming soon</span>
+      <div class="qr-placeholder">QR code<br>coming soon</div>
+    </div>
+
+  </div>
+
+  <!-- What's included -->
+  <div style="max-width:760px;margin:3rem auto 0;">
+    <h2 class="section-title text-center" style="margin-bottom:.5rem;">What's included for free</h2>
+    <p class="section-sub text-center">No credit card, no account, no catch.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;">
+      <div class="card" style="text-align:center;padding:1.25rem;">
+        <div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:2rem;color:var(--teal);">5</div>
+        <div style="font-weight:700;font-size:.9rem;">Puzzle types</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.25rem;">
+        <div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:2rem;color:var(--coral);">10</div>
+        <div style="font-weight:700;font-size:.9rem;">Free puzzles per difficulty, per game</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.25rem;">
+        <div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:2rem;color:var(--amber);">3</div>
+        <div style="font-weight:700;font-size:.9rem;">Difficulty levels (Easy · Medium · Hard)</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.25rem;">
+        <div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:2rem;color:var(--violet);">2</div>
+        <div style="font-weight:700;font-size:.9rem;">Visual themes (Sunshine &amp; Cosmic Night)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><span class="t">Bonkey</span><span class="c">Puzzles</span></div>
+      <p>A family-friendly puzzle collection by Bonkey Apps. Built with the Godot Engine.</p>
+    </div>
+    <div class="footer-col">
+      <h4>App</h4>
+      <ul>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="support.html">Support &amp; FAQ</a></li>
+        <li><a href="report.html">Report a Bug</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="press.html">Press Kit</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="licenses.html">Licenses</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Bonkey Apps. All rights reserved.</span>
+    <span><a href="mailto:bonkey.apps@gmail.com">bonkey.apps@gmail.com</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

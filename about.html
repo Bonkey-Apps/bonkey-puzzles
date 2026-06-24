@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Bonkey Puzzles</title>
+  <meta name="description" content="Learn about Bonkey Puzzles, the family-friendly puzzle app by Bonkey Apps, and meet Bonkey the hyperactive space-summer rabbit.">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-toggle" class="nav-toggle" style="display:none">
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="t">Bonkey</span><span class="c">Puzzles</span></a>
+    <label for="nav-toggle" class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></label>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="download.html" class="nav-cta">Get the app</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header" style="background:linear-gradient(140deg,#FFB13C,#FF6F61);">
+  <h1>About Bonkey Puzzles</h1>
+  <p>Five puzzles. One hyperactive rabbit. Built with love.</p>
+</header>
+
+<section class="section">
+  <div style="display:flex;gap:3rem;flex-wrap:wrap;align-items:center;">
+    <div style="flex:1;min-width:260px;">
+      <h2 class="section-title">What is Bonkey Puzzles?</h2>
+      <p style="color:#555;margin-bottom:1rem;">Bonkey Puzzles is a family-friendly mobile puzzle collection bringing together five beloved classic game types — Crossword, Sudoku, Word Search, Word Ladder, and Code Words — in a single joyful app.</p>
+      <p style="color:#555;margin-bottom:1rem;">The app is designed for all ages. Kids can start on Easy and work their way up; adults can jump straight to Hard. With Daily Challenges, streak rewards, and hundreds of puzzles across two beautiful themes, there is always something new to explore.</p>
+      <p style="color:#555;">Bonkey Puzzles is fully offline, contains no advertising, and makes no network calls during gameplay. All progress is stored locally on your device. It is safe for the whole family.</p>
+    </div>
+    <div style="flex:none;">
+      <img src="images/bonkey-hero.png" alt="Bonkey the rabbit" style="width:240px;height:240px;border-radius:28px;object-fit:cover;object-position:center 18%;box-shadow:0 12px 36px rgba(255,111,97,.25);">
+    </div>
+  </div>
+</section>
+
+<!-- Meet Bonkey -->
+<section style="background:var(--ink);padding:4rem 1.5rem;">
+  <div style="max-width:1100px;margin:0 auto;display:flex;gap:3rem;flex-wrap:wrap;align-items:center;">
+    <img src="images/bonkey-run.png" alt="Bonkey running" style="width:220px;height:220px;border-radius:24px;object-fit:cover;box-shadow:0 12px 36px rgba(0,0,0,.3);flex:none;">
+    <div style="flex:1;min-width:240px;">
+      <span class="badge badge-teal" style="margin-bottom:1rem;display:inline-block;">Meet the mascot</span>
+      <h2 style="font-family:'Baloo 2',cursive;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);color:#fff;margin-bottom:.75rem;">Say hi to Bonkey!</h2>
+      <p style="color:rgba(255,255,255,.7);margin-bottom:1rem;">Bonkey is a hyperactive, always-smiling rabbit who loves space, summer, and solving puzzles at warp speed. He shows up on the splash screen as the hero, and appears as a cheerful sidekick during gameplay to celebrate your wins (and commiserate your losses).</p>
+      <p style="color:rgba(255,255,255,.7);">Bonkey's outfit is a curious mix of tropical summer gear — Hawaiian shirt, sun hat, flip-flops — and space explorer accessories: a jetpack, space patches, and the occasional asteroid he bounces off for fun. Classic Bonkey.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Built with Godot -->
+<section class="section">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;">
+    <div class="card" style="border-left:4px solid var(--teal);">
+      <h3 style="font-family:'Baloo 2',cursive;font-weight:700;font-size:1.1rem;margin-bottom:.5rem;color:var(--teal);">Built with Godot Engine</h3>
+      <p style="font-size:.9rem;color:#666;">Bonkey Puzzles is developed with the open-source Godot Engine (MIT License). We chose Godot for its lightweight footprint, active community, and first-class support for Android and iOS.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--coral);">
+      <h3 style="font-family:'Baloo 2',cursive;font-weight:700;font-size:1.1rem;margin-bottom:.5rem;color:var(--coral);">No subscriptions, ever</h3>
+      <p style="font-size:.9rem;color:#666;">Every game comes with a free pack. Optional puzzle packs are one-time purchases through Google Play and the App Store — no recurring charges, no expiry dates.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--violet);">
+      <h3 style="font-family:'Baloo 2',cursive;font-weight:700;font-size:1.1rem;margin-bottom:.5rem;color:var(--violet);">Privacy first</h3>
+      <p style="font-size:.9rem;color:#666;">We collect no personal data. No analytics SDK, no crash reporter, no advertising. All game data stays on your device. <a href="privacy.html">Read our full privacy policy</a>.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--amber);">
+      <h3 style="font-family:'Baloo 2',cursive;font-weight:700;font-size:1.1rem;margin-bottom:.5rem;color:#b87800;">Family friendly</h3>
+      <p style="font-size:.9rem;color:#666;">Designed for players of all ages. Three difficulty levels, large tap targets, bright visuals, and a cheerful mascot make it approachable for young puzzlers and satisfying for seasoned ones.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section style="background:linear-gradient(135deg,var(--teal),var(--sky));padding:3.5rem 1.5rem;text-align:center;color:#fff;">
+  <h2 style="font-family:'Baloo 2',cursive;font-weight:800;font-size:1.9rem;margin-bottom:.6rem;">Get in touch</h2>
+  <p style="opacity:.92;font-weight:600;margin-bottom:1.5rem;">Questions, feedback, press enquiries, or just want to say hi?</p>
+  <a href="mailto:bonkey.apps@gmail.com" class="btn btn-dark btn-lg">bonkey.apps@gmail.com</a>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><span class="t">Bonkey</span><span class="c">Puzzles</span></div>
+      <p>A family-friendly puzzle collection by Bonkey Apps. Built with the Godot Engine.</p>
+    </div>
+    <div class="footer-col">
+      <h4>App</h4>
+      <ul>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="support.html">Support &amp; FAQ</a></li>
+        <li><a href="report.html">Report a Bug</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="press.html">Press Kit</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="licenses.html">Licenses</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Bonkey Apps. All rights reserved.</span>
+    <span><a href="mailto:bonkey.apps@gmail.com">bonkey.apps@gmail.com</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

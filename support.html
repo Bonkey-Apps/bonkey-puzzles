@@ -4,70 +4,118 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Support — Bonkey Puzzles</title>
+  <link rel="stylesheet" href="site.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; background: #f8f9fa; line-height: 1.7; }
-    a { color: #4a6cf7; }
-    .page-header { background: linear-gradient(135deg, #4a6cf7 0%, #6a3de8 100%); color: #fff; padding: 3rem 1.5rem 2.5rem; text-align: center; }
-    .page-header h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 800; }
-    .page-header p { margin-top: .5rem; opacity: .85; }
-    article { max-width: 720px; margin: 3rem auto; padding: 0 1.5rem 4rem; }
-    .faq-item { background: #fff; border-radius: 14px; padding: 1.5rem; margin-bottom: 1.25rem; box-shadow: 0 2px 10px rgba(0,0,0,.07); }
-    .faq-item h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: .5rem; color: #1a1a2e; }
-    .faq-item p { color: #555; margin: 0; }
-    footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 2rem 1.5rem; font-size: .9rem; }
-    footer a { color: #aaa; }
-    footer a:hover { color: #fff; }
-    footer .sep { margin: 0 .5rem; }
+    .faq-item {
+      background: #fff; border-radius: 16px; padding: 1.5rem;
+      margin-bottom: 1.1rem; box-shadow: var(--card-shadow);
+      border-left: 4px solid var(--cream-dark); transition: border-color .15s;
+    }
+    .faq-item:hover { border-left-color: var(--teal); }
+    .faq-item h3 { font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 1rem; margin-bottom: .4rem; }
+    .faq-item p  { font-size: .9rem; color: #555; margin: 0; }
   </style>
 </head>
 <body>
 
-<header class="page-header">
+<input type="checkbox" id="nav-toggle" class="nav-toggle" style="display:none">
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="t">Bonkey</span><span class="c">Puzzles</span></a>
+    <label for="nav-toggle" class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></label>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="support.html" class="active">Support</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="download.html" class="nav-cta">Get the app</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header" style="background:linear-gradient(140deg,var(--violet),var(--sky));">
   <h1>Support</h1>
   <p>Frequently asked questions for Bonkey Puzzles</p>
 </header>
 
-<article>
+<div class="section-sm">
 
   <div class="faq-item">
-    <h2>How do I restore my purchases?</h2>
-    <p>Open the app, go to <strong>Settings → Restore Purchases</strong> and tap the button. Make sure you're signed in to the same Google account you used when you originally bought the pack.</p>
+    <h3>How do I restore my purchases?</h3>
+    <p>Open the app, go to <strong>Settings → Restore Purchases</strong> and tap the button. Make sure you are signed into the same Google or Apple account you used when you originally bought the pack.</p>
   </div>
 
   <div class="faq-item">
-    <h2>Does the app require an internet connection?</h2>
+    <h3>Does the app require an internet connection?</h3>
     <p>No. Bonkey Puzzles is fully offline. Once installed, you can play anywhere — on a plane, underground, wherever — with no internet connection at all.</p>
   </div>
 
   <div class="faq-item">
-    <h2>What's included for free?</h2>
+    <h3>What's included for free?</h3>
     <p>Every game includes a free pack: 10 puzzles per difficulty (Easy, Medium, Hard). You never need to buy anything to enjoy the app.</p>
   </div>
 
   <div class="faq-item">
-    <h2>What does the paid pack include?</h2>
+    <h3>What does the paid pack include?</h3>
     <p>The <strong>Single Game Pack ($5.00)</strong> adds 50 more puzzles per difficulty for one game of your choice. The <strong>Bundle Pack ($7.50, coming soon)</strong> adds 100 more puzzles per difficulty. Both are one-time purchases — no subscription, no expiry.</p>
   </div>
 
   <div class="faq-item">
-    <h2>I found a bug or want to suggest a feature.</h2>
-    <p>We'd love to hear from you! Visit the <a href="report.html">Report a Bug</a> page to submit an issue, or email us at <a href="mailto:bonkey.apps@gmail.com">bonkey.apps@gmail.com</a>.</p>
+    <h3>How do I switch between Sunshine and Cosmic Night themes?</h3>
+    <p>Open the app and go to <strong>Settings</strong>. Under "App theme", tap <strong>Sunshine</strong> or <strong>Cosmic Night</strong>. The whole app re-skins instantly.</p>
   </div>
 
   <div class="faq-item">
-    <h2>Something else?</h2>
-    <p>Email us at <a href="mailto:bonkey.apps@gmail.com">bonkey.apps@gmail.com</a> and we'll get back to you as soon as we can.</p>
+    <h3>What are Daily Challenges?</h3>
+    <p>Every day a new puzzle is unlocked in the <strong>Daily</strong> tab. Complete it to earn bonus stars and maintain your streak. A streak reward chest appears every 7 days.</p>
   </div>
 
-</article>
+  <div class="faq-item">
+    <h3>How does difficulty work?</h3>
+    <p>Each puzzle type has three difficulty levels — Easy, Medium, and Hard — with progressively larger grids and more words or numbers. You choose the difficulty when you pick a puzzle type. Your default can be set in Settings.</p>
+  </div>
 
-<footer>
-  <p>© Bonkey Apps
-    <span class="sep">·</span><a href="privacy.html">Privacy Policy</a>
-    <span class="sep">·</span><a href="support.html">Support</a>
-    <span class="sep">·</span><a href="report.html">Report a Bug</a>
-  </p>
+  <div class="faq-item">
+    <h3>I found a bug or want to suggest a feature.</h3>
+    <p>We would love to hear from you! Visit the <a href="report.html">Report a Bug</a> page to open a GitHub issue or send us an email at <a href="mailto:bonkey.apps@gmail.com">bonkey.apps@gmail.com</a>.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Something else?</h3>
+    <p>Email us at <a href="mailto:bonkey.apps@gmail.com">bonkey.apps@gmail.com</a> and we will get back to you as soon as we can.</p>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><span class="t">Bonkey</span><span class="c">Puzzles</span></div>
+      <p>A family-friendly puzzle collection by Bonkey Apps. Built with the Godot Engine.</p>
+    </div>
+    <div class="footer-col">
+      <h4>App</h4>
+      <ul>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="support.html">Support &amp; FAQ</a></li>
+        <li><a href="report.html">Report a Bug</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="press.html">Press Kit</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="licenses.html">Licenses</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Bonkey Apps. All rights reserved.</span>
+    <span><a href="mailto:bonkey.apps@gmail.com">bonkey.apps@gmail.com</a></span>
+  </div>
 </footer>
 
 </body>
