@@ -3,92 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Report a Bug &mdash; Bonkey Puzzles</title>
+  <title>Report a Bug &ndash; Bonkey Puzzles</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8f4ef; color: #1a1a1a; }
-    a { color: #5b7fa6; }
-    header {
-      background: #3a5f8a;
-      color: white;
-      padding: 24px;
-      text-align: center;
-    }
-    header h1 { font-size: 1.6rem; }
-    header a { color: rgba(255,255,255,0.8); font-size: 0.9rem; display: block; margin-top: 6px; }
-    main { max-width: 640px; margin: 0 auto; padding: 48px 24px; }
-    p { font-size: 1rem; line-height: 1.7; color: #333; margin-bottom: 16px; }
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 36px 32px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      margin-bottom: 24px;
-      text-align: center;
-    }
-    .card h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 12px; color: #1a1a1a; }
-    .card p { margin-bottom: 20px; font-size: 0.95rem; color: #555; }
-    .btn {
-      display: inline-block;
-      background: #3a5f8a;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .btn:hover { background: #2d4f75; text-decoration: none; }
-    .btn-outline {
-      display: inline-block;
-      border: 2px solid #3a5f8a;
-      color: #3a5f8a;
-      padding: 12px 26px;
-      border-radius: 10px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .btn-outline:hover { background: #eef3f8; text-decoration: none; }
-    footer { text-align: center; padding: 32px 24px; font-size: 0.875rem; color: #888; border-top: 1px solid #e0d8d0; margin-top: 24px; }
-    footer a { color: #888; }
-    footer span { margin: 0 8px; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: #f8f6f2; color: #2d2d2d; line-height: 1.7; }
+    a { color: #5b4cdb; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    h1 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .subtitle { color: #555; margin-bottom: 2rem; }
+    h2 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.5rem; }
+    p { font-size: 0.97rem; margin-bottom: 0.75rem; }
+    .cta { display: inline-block; background: #5b4cdb; color: #fff; font-weight: 700; padding: 0.85rem 2rem; border-radius: 50px; margin-top: 0.5rem; font-size: 1rem; }
+    .cta:hover { background: #4438c2; text-decoration: none; }
+    .back { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; color: #5b4cdb; }
+    footer { text-align: center; font-size: 0.875rem; color: #888; margin-top: 3rem; }
+    footer a { color: #5b4cdb; }
   </style>
 </head>
 <body>
+<div class="wrap">
+  <a class="back" href="index.html">&larr; Home</a>
+  <h1>Report a Bug or Request a Feature</h1>
+  <p class="subtitle">Found something broken? Have an idea to make Bonkey Puzzles better? We'd love to hear from you.</p>
 
-<header>
-  <h1>Report a Bug</h1>
-  <a href="/bonkey-puzzles/">&larr; Bonkey Puzzles</a>
-</header>
+  <h2>Open a GitHub Issue (preferred)</h2>
+  <p>The fastest way to get a bug fixed or a feature considered is to open an issue on GitHub. It takes about a minute and your report goes straight to the development queue.</p>
+  <a class="cta" href="https://github.com/Bonkey-Enterprise/bonkey-games/issues/new?template=bug_report.md" target="_blank" rel="noopener">Report a Bug on GitHub &rarr;</a>
+  <br><br>
+  <a class="cta" href="https://github.com/Bonkey-Enterprise/bonkey-games/issues/new?template=feature_request.md" target="_blank" rel="noopener" style="background:#8b5cf6;">Request a Feature on GitHub &rarr;</a>
 
-<main>
-  <p>Spotted something wrong? We want to know! Choose the option that works best for you.</p>
+  <h2>No GitHub account? Email us instead.</h2>
+  <p>That's fine &mdash; just send an email to <a href="mailto:bonkey.apps@gmail.com">bonkey.apps@gmail.com</a> with a description of the bug or idea. Please include:</p>
+  <ul style="padding-left:1.5rem; margin-bottom:0.75rem;">
+    <li>Which game were you playing?</li>
+    <li>What difficulty level?</li>
+    <li>What happened, and what did you expect to happen?</li>
+    <li>Your device model and Android version (if reporting a bug).</li>
+  </ul>
 
-  <div class="card">
-    <h2>Open a GitHub Issue</h2>
-    <p>The fastest way to report a bug or suggest a feature. A pre-filled template will guide you through the details we need.</p>
-    <a class="btn" href="https://github.com/Bonkey-Enterprise/bonkey-games/issues/new?template=bug_report.md" target="_blank" rel="noopener">Open Bug Report &rarr;</a>
-  </div>
-
-  <div class="card">
-    <h2>Email Us</h2>
-    <p>No GitHub account? No problem &mdash; send us an email and we&rsquo;ll follow up directly.</p>
-    <a class="btn-outline" href="mailto:bonkey.apps@gmail.com">bonkey.apps@gmail.com</a>
-  </div>
-
-  <p style="font-size: 0.875rem; color: #888; text-align: center;">For general questions or purchase help, visit our <a href="/bonkey-puzzles/support">Support page</a>.</p>
-</main>
-
-<footer>
-  &copy; Bonkey Apps
-  <span>&middot;</span>
-  <a href="/bonkey-puzzles/">Home</a>
-  <span>&middot;</span>
-  <a href="/bonkey-puzzles/privacy">Privacy Policy</a>
-  <span>&middot;</span>
-  <a href="/bonkey-puzzles/support">Support</a>
-</footer>
-
+  <footer>
+    <a href="index.html">Home</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="support.html">Support</a><br>
+    &copy; Bonkey Apps
+  </footer>
+</div>
 </body>
 </html>
