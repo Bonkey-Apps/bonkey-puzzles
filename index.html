@@ -5,48 +5,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bonkey Puzzles</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, sans-serif; color: #1a1a2e; background: #f8f9fa; line-height: 1.6; }
-    a { color: #4a90d9; text-decoration: none; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8f4ef; color: #1a1a1a; }
+    a { color: #5b7fa6; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* Hero */
-    .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%); color: #fff; text-align: center; padding: 80px 24px 64px; }
-    .hero h1 { font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 16px; }
-    .hero p { font-size: clamp(1rem, 3vw, 1.25rem); opacity: 0.85; max-width: 520px; margin: 0 auto 32px; }
-    .badge-placeholder { display: inline-block; background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 14px 28px; font-size: 0.95rem; color: #ddd; margin-top: 8px; }
+    .hero {
+      background: linear-gradient(135deg, #3a5f8a 0%, #5b7fa6 100%);
+      color: white;
+      text-align: center;
+      padding: 64px 24px 80px;
+    }
+    .hero h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.5px; }
+    .hero p { font-size: 1.2rem; margin-top: 12px; opacity: 0.9; }
+    .badge-placeholder {
+      display: inline-block;
+      margin-top: 32px;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-size: 1rem;
+      color: white;
+      letter-spacing: 0.5px;
+    }
 
-    /* Sections */
-    section { padding: 64px 24px; max-width: 900px; margin: 0 auto; }
-    h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 32px; color: #0f3460; }
+    section { max-width: 900px; margin: 0 auto; padding: 56px 24px; }
+    h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 24px; color: #1a1a1a; }
 
-    /* Games grid */
-    .games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
-    .game-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); border-left: 4px solid #4a90d9; }
-    .game-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
-    .game-card p { font-size: 0.9rem; color: #555; }
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .game-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .game-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; color: #3a5f8a; }
+    .game-card p { font-size: 0.95rem; line-height: 1.55; color: #444; }
 
-    /* Pricing */
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-    .price-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); text-align: center; }
-    .price-card .price { font-size: 2rem; font-weight: 800; color: #0f3460; margin: 12px 0 4px; }
-    .price-card .label { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; }
-    .price-card p { font-size: 0.9rem; color: #555; margin-top: 8px; }
-    .badge-soon { display: inline-block; background: #e8f4fd; color: #4a90d9; border-radius: 20px; font-size: 0.75rem; font-weight: 700; padding: 2px 10px; margin-top: 4px; }
+    .pricing {
+      background: white;
+      border-radius: 16px;
+      padding: 40px 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 18px 0;
+      border-bottom: 1px solid #eee;
+      gap: 16px;
+    }
+    .pricing-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .pricing-label { font-weight: 600; font-size: 1rem; }
+    .pricing-desc { font-size: 0.9rem; color: #666; margin-top: 4px; }
+    .pricing-price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #3a5f8a;
+      white-space: nowrap;
+    }
+    .tag-free {
+      background: #e6f4ea;
+      color: #2e7d32;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 99px;
+    }
+    .tag-soon {
+      background: #fff3e0;
+      color: #e65100;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 99px;
+    }
 
-    /* Footer */
-    footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 32px 24px; font-size: 0.875rem; }
-    footer a { color: #7ab8f5; }
-    footer .sep { margin: 0 8px; }
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.875rem;
+      color: #888;
+      border-top: 1px solid #e0d8d0;
+    }
+    footer a { color: #888; }
+    footer span { margin: 0 8px; }
   </style>
 </head>
 <body>
 
-<header class="hero">
+<div class="hero">
   <h1>Bonkey Puzzles</h1>
-  <p>Five classic puzzle games in one app. Calm, ad-free, and always available offline.</p>
-  <div class="badge-placeholder">Google Play &mdash; Coming Soon</div>
-</header>
+  <p>Classic puzzles. Offline, ad-free, and always in your pocket.</p>
+  <div class="badge-placeholder">Available soon on Google Play</div>
+</div>
 
 <section>
   <h2>Games</h2>
@@ -57,54 +115,58 @@
     </div>
     <div class="game-card">
       <h3>Word Search</h3>
-      <p>Hunt for hidden words across a letter grid&mdash;left, right, up, down, and diagonal.</p>
+      <p>Find hidden words woven into a letter grid in any direction.</p>
     </div>
     <div class="game-card">
       <h3>Word Ladder</h3>
-      <p>Transform one word into another by changing a single letter at each step.</p>
+      <p>Climb from one word to another by changing a single letter at each step.</p>
     </div>
     <div class="game-card">
       <h3>Crossword</h3>
-      <p>Solve clues across and down to fill the classic black-and-white grid.</p>
+      <p>Solve clever clues to fill the black-and-white grid one letter at a time.</p>
     </div>
     <div class="game-card">
       <h3>Codeword</h3>
-      <p>Crack the cipher&mdash;every number maps to a letter; fill the whole grid to win.</p>
+      <p>Crack the code: every number maps to a letter &mdash; fill the whole grid to win.</p>
     </div>
   </div>
 </section>
 
-<section style="background:#fff; max-width:100%; padding:64px 24px;">
-  <div style="max-width:900px; margin:0 auto;">
-    <h2>How to buy</h2>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="label">Free Pack</div>
-        <div class="price">$0</div>
-        <p>10 puzzles per difficulty&mdash;no purchase, no account, no catch.</p>
+<section style="padding-top: 0;">
+  <h2>How to buy</h2>
+  <div class="pricing">
+    <div class="pricing-row">
+      <div>
+        <div class="pricing-label">Free Pack <span class="tag-free">FREE</span></div>
+        <div class="pricing-desc">10 puzzles per difficulty &mdash; always included, no purchase needed.</div>
       </div>
-      <div class="price-card">
-        <div class="label">Single Pack</div>
-        <div class="price">$5</div>
-        <p>50 more puzzles per difficulty for one game. One-time purchase, yours forever.</p>
-      </div>
-      <div class="price-card">
-        <div class="label">Bundle Pack</div>
-        <div class="price">$7.50</div>
-        <p>100 more puzzles per difficulty for one game. Best value per puzzle.</p>
-        <span class="badge-soon">Coming Soon</span>
-      </div>
+      <div class="pricing-price">$0</div>
     </div>
-    <p style="margin-top:24px; font-size:0.9rem; color:#666;">All purchases are one-time&mdash;no subscriptions, ever. Purchases restore automatically on any device signed in to the same Google Play account.</p>
+    <div class="pricing-row">
+      <div>
+        <div class="pricing-label">Single Pack</div>
+        <div class="pricing-desc">50 more puzzles per difficulty for one game. One-time purchase.</div>
+      </div>
+      <div class="pricing-price">$5.00</div>
+    </div>
+    <div class="pricing-row">
+      <div>
+        <div class="pricing-label">Bundle Pack <span class="tag-soon">Coming soon</span></div>
+        <div class="pricing-desc">100 more puzzles per difficulty for one game. Best value.</div>
+      </div>
+      <div class="pricing-price">$7.50</div>
+    </div>
   </div>
 </section>
 
 <footer>
-  <p>&copy; Bonkey Apps
-    <span class="sep">&middot;</span><a href="/bonkey-puzzles/privacy">Privacy Policy</a>
-    <span class="sep">&middot;</span><a href="/bonkey-puzzles/support">Support</a>
-    <span class="sep">&middot;</span><a href="/bonkey-puzzles/report">Report a Bug</a>
-  </p>
+  &copy; Bonkey Apps
+  <span>&middot;</span>
+  <a href="/bonkey-puzzles/privacy">Privacy Policy</a>
+  <span>&middot;</span>
+  <a href="/bonkey-puzzles/support">Support</a>
+  <span>&middot;</span>
+  <a href="/bonkey-puzzles/report">Report a Bug</a>
 </footer>
 
 </body>

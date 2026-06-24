@@ -5,58 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Report a Bug &mdash; Bonkey Puzzles</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, sans-serif; color: #1a1a2e; background: #f8f9fa; line-height: 1.7; }
-    a { color: #4a90d9; }
-    header { background: #1a1a2e; color: #fff; padding: 32px 24px; text-align: center; }
-    header h1 { font-size: 1.75rem; font-weight: 700; }
-    header p { opacity: 0.7; margin-top: 8px; font-size: 0.95rem; }
-    main { max-width: 640px; margin: 48px auto; padding: 0 24px 64px; }
-    p { font-size: 0.95rem; color: #444; margin-bottom: 16px; }
-    .card { background: #fff; border-radius: 16px; padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); margin-bottom: 20px; text-align: center; }
-    .card h2 { font-size: 1.15rem; font-weight: 700; color: #0f3460; margin-bottom: 12px; }
-    .card p { font-size: 0.9rem; color: #555; margin-bottom: 20px; }
-    .btn { display: inline-block; background: #0f3460; color: #fff; border-radius: 10px; padding: 14px 28px; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: background 0.2s; }
-    .btn:hover { background: #1a5a9a; text-decoration: none; }
-    .btn-outline { background: transparent; color: #0f3460; border: 2px solid #0f3460; }
-    .btn-outline:hover { background: #0f3460; color: #fff; }
-    .divider { text-align: center; color: #aaa; font-size: 0.85rem; margin: 8px 0; }
-    footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 24px; font-size: 0.875rem; }
-    footer a { color: #7ab8f5; }
-    .sep { margin: 0 8px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8f4ef; color: #1a1a1a; }
+    a { color: #5b7fa6; }
+    header {
+      background: #3a5f8a;
+      color: white;
+      padding: 24px;
+      text-align: center;
+    }
+    header h1 { font-size: 1.6rem; }
+    header a { color: rgba(255,255,255,0.8); font-size: 0.9rem; display: block; margin-top: 6px; }
+    main { max-width: 640px; margin: 0 auto; padding: 48px 24px; }
+    p { font-size: 1rem; line-height: 1.7; color: #333; margin-bottom: 16px; }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .card h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 12px; color: #1a1a1a; }
+    .card p { margin-bottom: 20px; font-size: 0.95rem; color: #555; }
+    .btn {
+      display: inline-block;
+      background: #3a5f8a;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .btn:hover { background: #2d4f75; text-decoration: none; }
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid #3a5f8a;
+      color: #3a5f8a;
+      padding: 12px 26px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .btn-outline:hover { background: #eef3f8; text-decoration: none; }
+    footer { text-align: center; padding: 32px 24px; font-size: 0.875rem; color: #888; border-top: 1px solid #e0d8d0; margin-top: 24px; }
+    footer a { color: #888; }
+    footer span { margin: 0 8px; }
   </style>
 </head>
 <body>
 
 <header>
   <h1>Report a Bug</h1>
-  <p>Bonkey Puzzles &mdash; Help us make the game better</p>
+  <a href="/bonkey-puzzles/">&larr; Bonkey Puzzles</a>
 </header>
 
 <main>
-  <p>Spotted something wrong or have an idea you&rsquo;d love to see? We genuinely want to hear about it. Pick whichever method is easiest for you.</p>
+  <p>Spotted something wrong? We want to know! Choose the option that works best for you.</p>
 
   <div class="card">
     <h2>Open a GitHub Issue</h2>
-    <p>The fastest way to get your report tracked. You&rsquo;ll need a free GitHub account. The form is pre-filled with the details we need.</p>
-    <a class="btn" href="https://github.com/Bonkey-Enterprise/bonkey-games/issues/new?template=bug_report.md" target="_blank" rel="noopener">Report on GitHub &rarr;</a>
+    <p>The fastest way to report a bug or suggest a feature. A pre-filled template will guide you through the details we need.</p>
+    <a class="btn" href="https://github.com/Bonkey-Enterprise/bonkey-games/issues/new?template=bug_report.md" target="_blank" rel="noopener">Open Bug Report &rarr;</a>
   </div>
-
-  <div class="divider">or</div>
 
   <div class="card">
-    <h2>Send us an email</h2>
-    <p>No GitHub account? No problem. Drop us a message with what happened, your device model, and Android version and we&rsquo;ll follow up.</p>
-    <a class="btn btn-outline" href="mailto:bonkey.apps@gmail.com?subject=Bonkey%20Puzzles%20Bug%20Report">bonkey.apps@gmail.com</a>
+    <h2>Email Us</h2>
+    <p>No GitHub account? No problem &mdash; send us an email and we&rsquo;ll follow up directly.</p>
+    <a class="btn-outline" href="mailto:bonkey.apps@gmail.com">bonkey.apps@gmail.com</a>
   </div>
+
+  <p style="font-size: 0.875rem; color: #888; text-align: center;">For general questions or purchase help, visit our <a href="/bonkey-puzzles/support">Support page</a>.</p>
 </main>
 
 <footer>
-  <p><a href="/bonkey-puzzles/">Bonkey Puzzles</a>
-    <span class="sep">&middot;</span>&copy; Bonkey Apps
-    <span class="sep">&middot;</span><a href="/bonkey-puzzles/privacy">Privacy Policy</a>
-    <span class="sep">&middot;</span><a href="/bonkey-puzzles/support">Support</a>
-  </p>
+  &copy; Bonkey Apps
+  <span>&middot;</span>
+  <a href="/bonkey-puzzles/">Home</a>
+  <span>&middot;</span>
+  <a href="/bonkey-puzzles/privacy">Privacy Policy</a>
+  <span>&middot;</span>
+  <a href="/bonkey-puzzles/support">Support</a>
 </footer>
 
 </body>
