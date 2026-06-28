@@ -1,0 +1,8 @@
+# actionlint configuration for Bonkey Puzzles website.
+# Teaches actionlint about the shared GCE self-hosted runner labels.
+self-hosted-runner:
+  labels:
+    - gce-c3-spot
+    - ephemeral
+    - android
+    - kvm
