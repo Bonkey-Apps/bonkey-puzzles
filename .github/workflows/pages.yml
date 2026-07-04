@@ -3,6 +3,11 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: [main]
+  # Manual re-deploy of the current main. Re-running a *previous* run is unsafe:
+  # deploy-pages@v5 aborts if a run has >1 "github-pages" artifact, and each
+  # re-run adds another one. A fresh dispatch starts a new run with zero
+  # artifacts, so it always deploys the current main cleanly.
+  workflow_dispatch:
 
 permissions:
   contents: read
