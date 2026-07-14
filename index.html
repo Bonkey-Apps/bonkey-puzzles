@@ -105,6 +105,36 @@
       padding: .7rem 1.5rem; text-align: center;
       font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 1.1rem;
     }
+
+    /* ── CAST ── */
+    .cast-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem; margin-top: 2.5rem;
+    }
+    .cast-card {
+      background: #fff; border-radius: 20px; overflow: hidden;
+      box-shadow: var(--card-shadow); text-align: center;
+      display: flex; flex-direction: column;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .cast-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.12);
+    }
+    .cast-photo {
+      width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;
+      background: #0d1430;
+    }
+    .cast-body { padding: 1.25rem 1.4rem 1.6rem; }
+    .cast-card h3 {
+      font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.25rem;
+      color: var(--ink); margin-bottom: .1rem;
+    }
+    .cast-role {
+      font-weight: 800; font-size: .78rem; letter-spacing: .04em;
+      text-transform: uppercase; margin-bottom: .6rem;
+    }
+    .cast-card p { font-size: .9rem; color: #666; margin: 0; line-height: 1.5; }
   </style>
 </head>
 <body>
@@ -294,6 +324,39 @@
       <p>Every letter is a number — crack the code to reveal the words.</p>
     </div>
   </div>
+</section>
+
+<!-- MEET THE CAST -->
+<section class="section" style="padding-top:0;">
+  <h2 class="section-title">Meet the cast</h2>
+  <p class="section-sub">Three puzzle-loving rabbits from the same space-summer crew — each one can ride along as your in-app buddy.</p>
+  <div class="cast-grid">
+    <div class="cast-card">
+      <img class="cast-photo" src="images/bonkey-hero.png" alt="Bonkey, the cream space-summer rabbit" loading="lazy" width="1168" height="896">
+      <div class="cast-body">
+        <h3>Bonkey</h3>
+        <div class="cast-role" style="color:var(--teal-dark);">The hyperactive hero</div>
+        <p>First to every puzzle and last to sit still. Bonkey started it all — and cheers you on from the corner of the screen.</p>
+      </div>
+    </div>
+    <div class="cast-card">
+      <img class="cast-photo" src="images/buster-hero.png" alt="Buster, the brown space-summer rabbit" loading="lazy" width="1168" height="896">
+      <div class="cast-body">
+        <h3>Buster</h3>
+        <div class="cast-role" style="color:var(--coral-dark);">The bold best friend</div>
+        <p>Never met a grid he wouldn't charge straight into. Buster brings the big grin and the go-for-it energy.</p>
+      </div>
+    </div>
+    <div class="cast-card">
+      <img class="cast-photo" src="images/cosmo-hero.png" alt="Cosmo, the grey space-summer rabbit" loading="lazy" width="1168" height="896">
+      <div class="cast-body">
+        <h3>Cosmo</h3>
+        <div class="cast-role" style="color:var(--sky);">The calm stargazer</div>
+        <p>Thinks three moves ahead and always spots the hidden word. Cool, collected, and quietly unbeatable.</p>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:1.5rem;font-size:.875rem;color:var(--muted);text-align:center;">Pick your favourite buddy any time in the app's settings.</p>
 </section>
 
 <!-- FEATURES -->
