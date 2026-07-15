@@ -1,0 +1,36 @@
+name: Sync assets to Google Drive
+
+# Mirrors the site images (images/**) into the Bonkey Apps Google Drive on
+# every push to main, and on demand. Requires the GDRIVE_* secrets — see
+# docs/google-drive-sync.md. If they are not set, the sync step is a no-op
+# (the script exits 0), so this never blocks.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "images/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: drive-sync-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Sync images to Google Drive
+        env:
+          GDRIVE_CLIENT_ID: ${{ secrets.GDRIVE_CLIENT_ID }}
+          GDRIVE_CLIENT_SECRET: ${{ secrets.GDRIVE_CLIENT_SECRET }}
+          GDRIVE_REFRESH_TOKEN: ${{ secrets.GDRIVE_REFRESH_TOKEN }}
+          GDRIVE_ROOT_FOLDER_ID: ${{ vars.GDRIVE_ROOT_FOLDER_ID }}
+        run: node tools/drive-sync/sync.mjs
